@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai_12</title>
+</head>
+<body>
+<p>Tính lãi kép (lãi mẹ đẻ lãi con):</p>
+<input id="money" type="text" placeholder="Nhập vào tiền vay ban đầu của bạn (VND)" style="margin-bottom: 10px"><br>
+<input id="interest_rate" type="text" placeholder="Nhập vào lãi suất gửi tiền hàng tháng (%)" style="margin-bottom: 10px"><br>
+<input id="month_number" type="text" placeholder="Nhập vào số tháng vay (tháng)" style="margin-bottom: 10px"><br>
+<button id="btn" style="cursor: pointer">Kiểm tra</button>
+<p id="result"></p>
+</body>
+</html>
+<script>
+    let btn = document.getElementById('btn');
+    let result = document.getElementById('result');
+    btn.addEventListener('click', function (){
+        let m = +document.getElementById('money').value;
+        let a = +document.getElementById('interest_rate').value;
+        let n = +document.getElementById('month_number').value;
+        if (Number.isInteger(n) && m > 0 && a > 0 && n > 0) {
+          let interest =  m * Math.pow((1 + a/100), n) ;
+            result.innerHTML = `Số tiền lãi phải trả là ${interest} VND`;
+        } else
+        result.innerHTML = `Vui lòng nhập lại`;
+    })
+</script>

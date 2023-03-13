@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai_11</title>
+</head>
+<body>
+<p>Tính thuế thu nhập cá nhân:</p>
+<input id="income" type="text" placeholder="Nhập vào thu nhập của bạn / tháng (triệu đồng)" style="margin-bottom: 10px"><br>
+<input id="D_person_number" type="text" placeholder="Nhập vào số người phụ thuộc bạn" style="margin-bottom: 10px"><br>
+<button id="btn" style="cursor: pointer">Kiểm tra</button>
+<p id="result"></p>
+</body>
+</html>
+<script>
+  let btn = document.getElementById('btn');
+  let result = document.getElementById('result');
+  btn.addEventListener('click', click)
+  function click() {
+    let income = +document.getElementById('income').value;
+    let D_person_number = +document.getElementById('D_person_number').value;
+    if (income > 0 && D_person_number >= 0 && Number.isInteger(D_person_number)) {
+      let income_taxes = income - 9 - 4.4 * D_person_number - 0.25;
+      let taxes = 0;
+      if  (income_taxes > 80){
+         taxes += (income_taxes - 80) * 35/100;
+          income_taxes = 80;
+      }
+      if (income_taxes > 52) {
+          taxes += (income_taxes - 52)* 30/100;
+          income_taxes = 52;
+      }
+      if (income_taxes > 32) {
+            taxes += (income_taxes - 32)* 25/100;
+            income_taxes = 32;
+      }
+      if (income_taxes > 18) {
+            taxes += (income_taxes - 18)* 20/100;
+            income_taxes = 18;
+      }
+      if (income_taxes > 10) {
+            taxes += (income_taxes - 10)* 15/100;
+            income_taxes = 10;
+      }
+      if (income_taxes > 5) {
+            taxes += (income_taxes - 5)* 10/100;
+            income_taxes = 5;
+      }
+      taxes += income_taxes * 5/100;
+      result.innerHTML = `Số tiền thuế phải đóng là: ${taxes} triệu đồng`;
+    } else
+      result.innerHTML = "Vui lòng nhập lại"
+  }
+</script>

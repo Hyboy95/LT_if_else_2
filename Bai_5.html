@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai_5</title>
+</head>
+<body>
+<p>Tính diện tích hình tam giác vuông có 2 cạnh kề a,b:</p>
+<input id="a_value" type="number" placeholder="Nhập vào độ dài cạnh kề a của tam giác vuông" style="margin-bottom: 10px"><br>
+<input id="b_value" type="number" placeholder="Nhập vào độ dài cạnh kề b của tam giác vuông" style="margin-bottom: 10px"><br>
+<button id="btn">Kiểm tra</button>
+<p id="result"></p>
+</body>
+</html>
+<script>
+  let btn = document.getElementById('btn');
+  let result = document.getElementById('result');
+  btn.addEventListener('click', function (){
+    let a = +document.getElementById('a_value').value;
+    let b = +document.getElementById('b_value').value;
+
+    if (a > 0 && b > 0) {
+      let area = a * b / 2;
+      result.innerHTML = `Diện tích hình tam giác vuông là ${area} (đơn vị diện tích)`
+    } else
+      result.innerHTML = `Vui lòng nhập lại`
+
+  })
+</script>

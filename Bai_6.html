@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai_6</title>
+</head>
+<body>
+<p>Giải phương trình bậc nhất ax+b = 0:</p>
+<input id="a_value" type="number" placeholder="Nhập vào hệ số a" style="margin-bottom: 10px"><br>
+<input id="b_value" type="number" placeholder="Nhập vào hệ số b" style="margin-bottom: 10px"><br>
+<button id="btn">Kiểm tra</button>
+<p id="result"></p>
+</body>
+</html>
+<script>
+  let btn = document.getElementById('btn');
+  let result = document.getElementById('result');
+  btn.addEventListener('click', function (){
+    let a = +document.getElementById('a_value').value;
+    let b = +document.getElementById('b_value').value;
+
+    if (a !== 0) {
+      let x = -b / a;
+      result.innerHTML = `Phương trình có 1 nghiệm x = ${x}`;
+    } else if (b === 0) {
+      result.innerHTML = `Phương trình có vô số nghiệm`;
+    } else
+      result.innerHTML = `Phương trình vô nghiệm`;
+  })
+</script>

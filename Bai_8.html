@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai_8</title>
+</head>
+<body>
+<p>Kiểm tra xem số nhập vào có phải tuổi 1 người không:</p>
+<input id="number" type="number" placeholder="Nhập vào số a" style="margin-bottom: 10px"><br>
+<button id="btn">Kiểm tra</button>
+<p id="result"></p>
+</body>
+</html>
+<script>
+  let btn = document.getElementById('btn');
+  let result = document.getElementById('result');
+  btn.addEventListener('click', function (){
+    let a = +document.getElementById('number').value;
+    if ( Number.isInteger(a) && a > 0 && a < 120) {
+      result.innerHTML = `${a} là tuổi của 1 người`
+    } else
+      result.innerHTML = `${a} không là tuổi của 1 người`
+  })
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai_3</title>
+</head>
+<body>
+<p>Tính diện tích hình vuông cạnh a:</p>
+<input id="a_value" type="number" placeholder="Nhập vào chiều dài cạnh hình vuông" style="margin-bottom: 10px"><br>
+<button id="btn">Kiểm tra</button>
+<p id="result"></p>
+</body>
+</html>
+<script>
+  let btn = document.getElementById('btn');
+  let result = document.getElementById('result');
+  btn.addEventListener('click', function (){
+    let a = +document.getElementById('a_value').value;
+    if (a > 0) {
+      let area = a * a;
+      result.innerHTML = `Diện tích hình vuông cạnh ${a} là ${area} (đơn vị diện tích)`
+    } else
+      result.innerHTML = `Vui lòng nhập lại`
+
+  })
+</script>
